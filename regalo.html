@@ -33,15 +33,12 @@
   .card::after{content:''; position:absolute; inset:14px; border:1px solid rgba(176,149,78,.4); pointer-events:none;}
   .reveal{opacity:0; transform:translateY(12px); animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;}
   @keyframes rise{to{opacity:1;transform:none;}}
-
   .overline{font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--blue); font-weight:500; text-align:center; margin-bottom:8px;}
   .who{font-family:'DM Serif Display',serif; font-size:30px; letter-spacing:-.5px; text-align:center;}
   .who .amp{font-style:italic; color:var(--blue);}
   .intro{font-size:13px; color:var(--ink2); line-height:1.7; max-width:440px; margin:14px auto 6px; text-align:center;}
-
   .sectitle{font-family:'DM Serif Display',serif; font-size:20px; margin:30px 0 12px; display:flex; align-items:center; gap:12px;}
   .sectitle::after{content:''; flex:1; height:1px; background:var(--line);}
-
   .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
   @media(max-width:560px){ .grid{grid-template-columns:1fr;} .card{padding:38px 20px 34px;} }
   .gcard{border:1px solid var(--line); background:#fff; padding:16px; display:flex; flex-direction:column;}
@@ -52,11 +49,9 @@
   .gcard .price{font-weight:500; color:var(--blue); font-size:15px;}
   .pick{background:var(--blue); color:#fff; border:none; padding:8px 14px; font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:500; cursor:pointer; transition:background .18s, transform .1s; white-space:nowrap;}
   .pick:hover{background:#173873;} .pick:active{transform:translateY(1px);}
-
   .back{display:block; text-align:center; margin-top:30px; font-size:12px; color:var(--ink2); text-decoration:none;}
   .back span{border-bottom:1px solid var(--line); padding-bottom:2px;}
   .back:hover span{color:var(--blue);}
-
   .overlay{position:fixed; inset:0; background:rgba(35,49,79,.5); display:none; align-items:center; justify-content:center; padding:20px; z-index:60; animation:fade .2s ease;}
   .overlay.show{display:flex;}
   @keyframes fade{from{opacity:0;} to{opacity:1;}}
@@ -75,7 +70,6 @@
 </style>
 </head>
 <body>
-
 <div class="card">
   <div class="reveal overline">Lista de Regalos</div>
   <div class="reveal who">Fer <span class="amp">&amp;</span> Martín</div>
@@ -84,9 +78,18 @@
     <div class="reveal sectitle">Para Emma 🐶</div>
     <div class="reveal grid">
       <div class="gcard">
+        <div class="emoji">🍦</div>
+        <div class="gname">Parque canino + helado perruno</div>
+        <div class="gdesc">Una tarde de juegos y premio frío para Emma.</div>
+        <div class="grow">
+          <span class="price">$6.000</span>
+          <button class="pick" data-name="Parque canino + helado perruno" data-amount="6000">Regalar</button>
+        </div>
+      </div>
+      <div class="gcard">
         <div class="emoji">🦴</div>
         <div class="gname">Saco de premios y juguetes</div>
-        <div class="gdesc">Snacks y juguetes nuevos para consentir a Emma.</div>
+        <div class="gdesc">Snacks y juguetes nuevos para consentirla.</div>
         <div class="grow">
           <span class="price">$7.000</span>
           <button class="pick" data-name="Saco de premios y juguetes" data-amount="7000">Regalar</button>
@@ -119,9 +122,36 @@
           <button class="pick" data-name="Sesión de fotos con Emma" data-amount="25000">Regalar</button>
         </div>
       </div>
+      <div class="gcard">
+        <div class="emoji">🛏️</div>
+        <div class="gname">Cama ortopédica nueva</div>
+        <div class="gdesc">Para que Emma duerma como reina.</div>
+        <div class="grow">
+          <span class="price">$35.000</span>
+          <button class="pick" data-name="Cama ortopédica nueva" data-amount="35000">Regalar</button>
+        </div>
+      </div>
+      <div class="gcard">
+        <div class="emoji">🎓</div>
+        <div class="gname">Curso de adiestramiento</div>
+        <div class="gdesc">Unas clases para la perrita más educada.</div>
+        <div class="grow">
+          <span class="price">$40.000</span>
+          <button class="pick" data-name="Curso de adiestramiento" data-amount="40000">Regalar</button>
+        </div>
+      </div>
     </div>
     <div class="reveal sectitle">Ciudad de México</div>
     <div class="reveal grid">
+      <div class="gcard">
+        <div class="emoji">🚲</div>
+        <div class="gname">Paseo en bici por Chapultepec</div>
+        <div class="gdesc">Una mañana sobre ruedas por el bosque.</div>
+        <div class="grow">
+          <span class="price">$11.000</span>
+          <button class="pick" data-name="Paseo en bici por Chapultepec" data-amount="11000">Regalar</button>
+        </div>
+      </div>
       <div class="gcard">
         <div class="emoji">🎨</div>
         <div class="gname">Entradas al Museo Frida Kahlo</div>
@@ -129,6 +159,15 @@
         <div class="grow">
           <span class="price">$14.000</span>
           <button class="pick" data-name="Entradas al Museo Frida Kahlo" data-amount="14000">Regalar</button>
+        </div>
+      </div>
+      <div class="gcard">
+        <div class="emoji">🤼</div>
+        <div class="gname">Lucha libre en la Arena México</div>
+        <div class="gdesc">Máscaras, llaves y pura adrenalina.</div>
+        <div class="grow">
+          <span class="price">$16.000</span>
+          <button class="pick" data-name="Lucha libre en la Arena México" data-amount="16000">Regalar</button>
         </div>
       </div>
       <div class="gcard">
@@ -141,12 +180,30 @@
         </div>
       </div>
       <div class="gcard">
+        <div class="emoji">🥐</div>
+        <div class="gname">Brunch en la Condesa</div>
+        <div class="gdesc">Un domingo lento entre cafés bonitos.</div>
+        <div class="grow">
+          <span class="price">$24.000</span>
+          <button class="pick" data-name="Brunch en la Condesa" data-amount="24000">Regalar</button>
+        </div>
+      </div>
+      <div class="gcard">
         <div class="emoji">🥃</div>
         <div class="gname">Tour de mezcalerías en la Roma</div>
         <div class="gdesc">Para brindar por los recién casados.</div>
         <div class="grow">
           <span class="price">$32.000</span>
           <button class="pick" data-name="Tour de mezcalerías en la Roma" data-amount="32000">Regalar</button>
+        </div>
+      </div>
+      <div class="gcard">
+        <div class="emoji">🌮</div>
+        <div class="gname">Tour de comida callejera</div>
+        <div class="gdesc">Recorrer los mejores puestos de la ciudad.</div>
+        <div class="grow">
+          <span class="price">$38.000</span>
+          <button class="pick" data-name="Tour de comida callejera" data-amount="38000">Regalar</button>
         </div>
       </div>
       <div class="gcard">
@@ -158,9 +215,27 @@
           <button class="pick" data-name="Vuelo en globo en Teotihuacán" data-amount="95000">Regalar</button>
         </div>
       </div>
+      <div class="gcard">
+        <div class="emoji">🏨</div>
+        <div class="gname">Noche en hotel boutique</div>
+        <div class="gdesc">Una escapada con estilo en plena ciudad.</div>
+        <div class="grow">
+          <span class="price">$110.000</span>
+          <button class="pick" data-name="Noche en hotel boutique" data-amount="110000">Regalar</button>
+        </div>
+      </div>
     </div>
     <div class="reveal sectitle">Playa del Carmen & Cancún</div>
     <div class="reveal grid">
+      <div class="gcard">
+        <div class="emoji">🧘</div>
+        <div class="gname">Yoga al amanecer en la playa</div>
+        <div class="gdesc">Empezar el día frente al mar.</div>
+        <div class="grow">
+          <span class="price">$10.000</span>
+          <button class="pick" data-name="Yoga al amanecer en la playa" data-amount="10000">Regalar</button>
+        </div>
+      </div>
       <div class="gcard">
         <div class="emoji">🤿</div>
         <div class="gname">Snorkel en un cenote</div>
@@ -168,6 +243,15 @@
         <div class="grow">
           <span class="price">$28.000</span>
           <button class="pick" data-name="Snorkel en un cenote" data-amount="28000">Regalar</button>
+        </div>
+      </div>
+      <div class="gcard">
+        <div class="emoji">🏄</div>
+        <div class="gname">Clase de surf en la Riviera</div>
+        <div class="gdesc">Para atrevernos con las olas.</div>
+        <div class="grow">
+          <span class="price">$30.000</span>
+          <button class="pick" data-name="Clase de surf en la Riviera" data-amount="30000">Regalar</button>
         </div>
       </div>
       <div class="gcard">
@@ -180,12 +264,39 @@
         </div>
       </div>
       <div class="gcard">
+        <div class="emoji">🏛️</div>
+        <div class="gname">Tour a Chichén Itzá</div>
+        <div class="gdesc">Una de las nuevas maravillas del mundo.</div>
+        <div class="grow">
+          <span class="price">$45.000</span>
+          <button class="pick" data-name="Tour a Chichén Itzá" data-amount="45000">Regalar</button>
+        </div>
+      </div>
+      <div class="gcard">
+        <div class="emoji">🌅</div>
+        <div class="gname">Beach club al atardecer</div>
+        <div class="gdesc">Cócteles con los pies en la arena.</div>
+        <div class="grow">
+          <span class="price">$52.000</span>
+          <button class="pick" data-name="Beach club al atardecer" data-amount="52000">Regalar</button>
+        </div>
+      </div>
+      <div class="gcard">
         <div class="emoji">⛵</div>
         <div class="gname">Catamarán a Isla Mujeres</div>
         <div class="gdesc">Un día completo navegando el Caribe.</div>
         <div class="grow">
           <span class="price">$60.000</span>
           <button class="pick" data-name="Catamarán a Isla Mujeres" data-amount="60000">Regalar</button>
+        </div>
+      </div>
+      <div class="gcard">
+        <div class="emoji">💆</div>
+        <div class="gname">Masaje en pareja frente al mar</div>
+        <div class="gdesc">Relajo total para los dos.</div>
+        <div class="grow">
+          <span class="price">$80.000</span>
+          <button class="pick" data-name="Masaje en pareja frente al mar" data-amount="80000">Regalar</button>
         </div>
       </div>
       <div class="gcard">
@@ -201,12 +312,30 @@
     <div class="reveal sectitle">Para comer 🌮</div>
     <div class="reveal grid">
       <div class="gcard">
+        <div class="emoji">🍨</div>
+        <div class="gname">Helados artesanales para dos</div>
+        <div class="gdesc">Un antojo dulce de la mano.</div>
+        <div class="grow">
+          <span class="price">$5.000</span>
+          <button class="pick" data-name="Helados artesanales para dos" data-amount="5000">Regalar</button>
+        </div>
+      </div>
+      <div class="gcard">
         <div class="emoji">🌮</div>
         <div class="gname">Tacos al pastor para dos</div>
         <div class="gdesc">El antojo clásico, de trompo y bien servido.</div>
         <div class="grow">
           <span class="price">$9.000</span>
           <button class="pick" data-name="Tacos al pastor para dos" data-amount="9000">Regalar</button>
+        </div>
+      </div>
+      <div class="gcard">
+        <div class="emoji">🌶️</div>
+        <div class="gname">Noche de mezcal y quesadillas</div>
+        <div class="gdesc">Una cena informal pero perfecta.</div>
+        <div class="grow">
+          <span class="price">$13.000</span>
+          <button class="pick" data-name="Noche de mezcal y quesadillas" data-amount="13000">Regalar</button>
         </div>
       </div>
       <div class="gcard">
@@ -261,7 +390,6 @@
 
   <a class="back" href="index.html"><span>&larr; Volver a la invitación</span></a>
 </div>
-
 <div class="overlay" id="overlay">
   <div class="modal">
     <button class="mclose" id="mclose">&times;</button>
@@ -280,7 +408,6 @@
     <button class="copy-all" id="copyAll">Copiar datos</button>
   </div>
 </div>
-
 <script>
 const fmt = n => "$" + Number(n).toLocaleString("es-CL");
 const overlay = document.getElementById("overlay");
