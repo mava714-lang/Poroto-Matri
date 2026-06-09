@@ -7,7 +7,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://poroto-matri.vercel.app/">
 <meta property="og:title" content="Matrimonio civil · Fer &amp; Martín">
-<meta property="og:description" content="Nos casamos el 4 de julio a las 12:00 · Confirma tu asistencia">
+<meta property="og:description" content="Nos casamos el 4 de julio a las 12:00 · Confirma tu asistencia 💍">
 <meta property="og:image" content="https://poroto-matri.vercel.app/og.png">
 <meta property="og:image:secure_url" content="https://poroto-matri.vercel.app/og.png">
 <meta property="og:image:type" content="image/png">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="es_CL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Matrimonio civil · Fer &amp; Martín">
-<meta name="twitter:description" content="Nos casamos el 4 de julio a las 12:00 · Confirma tu asistencia">
+<meta name="twitter:description" content="Nos casamos el 4 de julio a las 12:00 · Confirma tu asistencia 💍">
 <meta name="twitter:image" content="https://poroto-matri.vercel.app/og.png">
 <meta name="description" content="Matrimonio civil de Fer &amp; Martín · 4 de julio a las 12:00 · Confirma tu asistencia">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -206,8 +206,9 @@ const CONFIG = {
   novio:     "Martín",
   iniciales: "F & M",
   intro:     "Eres importante para nosotros y queremos que nos acompañes en este día especial.",
-  fecha:     "Sábado 4 de julio",
-  hora:      "2026 · 12:00 hrs",
+  fecha:     "Sábado 4 de julio · 2026",
+  ceremonia: "Ceremonia 12:00 hrs",
+  carrete:   "Carrete hasta 00:00 hrs",
   lugar:     "Casa Andrés Vega",
   direccion: "Julia Bernstein 1433, Casa C",
   dress:     "Código de vestimenta: Semi formal",
@@ -228,7 +229,7 @@ const $ = id => document.getElementById(id);
 $("overline").textContent = CONFIG.overline;
 $("names").innerHTML = CONFIG.novia + ' <span class="amp">&amp;</span> ' + CONFIG.novio;
 $("lead").textContent = CONFIG.intro;
-$("dateV").innerHTML = CONFIG.fecha + '<small>' + CONFIG.hora + '</small>';
+$("dateV").innerHTML = CONFIG.fecha + '<small>' + CONFIG.ceremonia + '</small><small>' + CONFIG.carrete + '</small>';
 $("placeV").innerHTML = CONFIG.lugar + '<small>' + CONFIG.direccion + '</small>';
 $("dress").textContent = CONFIG.dress;
 $("deadline").textContent = CONFIG.deadline;
