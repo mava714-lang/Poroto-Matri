@@ -398,12 +398,11 @@
     <div class="mamount" id="mamount"></div>
     <p class="mhint">Transfiere el monto a esta cuenta e indica el nombre del regalo en el mensaje, así sabemos que fuiste tú 💌</p>
     <div class="gift-rows">
-      <div class="gift-row"><span class="gk">Titular</span><span class="gv">Fernanda Durán</span></div>
-      <div class="gift-row"><span class="gk">RUT</span><span class="gv">19.827.759-2</span></div>
-      <div class="gift-row"><span class="gk">Banco</span><span class="gv">Banco de Chile</span></div>
-      <div class="gift-row"><span class="gk">Tipo</span><span class="gv">Cuenta Corriente</span></div>
-      <div class="gift-row"><span class="gk">N° Cuenta</span><span class="gv">00-446-30045-04</span></div>
-      <div class="gift-row" style="border-bottom:none;"><span class="gk">Correo</span><span class="gv">fdurancontreras4@gmail.com</span></div>
+      <div class="gift-row"><span class="gk">Titular</span><span class="gv">Martín Alonso Vega Avalos</span></div>
+      <div class="gift-row"><span class="gk">RUT</span><span class="gv">19.690.004-7</span></div>
+      <div class="gift-row"><span class="gk">Banco</span><span class="gv">Global66</span></div>
+      <div class="gift-row"><span class="gk">Tipo</span><span class="gv">Cuenta Vista</span></div>
+      <div class="gift-row" style="border-bottom:none;"><span class="gk">N° Cuenta</span><span class="gv">13066564</span></div>
     </div>
     <button class="copy-all" id="copyAll">Copiar datos</button>
   </div>
@@ -433,12 +432,11 @@ copyBtn.addEventListener("click", ()=>{
     "Regalo: " + current.name,
     "Monto: " + fmt(current.amount),
     "",
-    "Fernanda Durán",
-    "RUT: 19.827.759-2",
-    "Banco de Chile",
-    "Cuenta Corriente",
-    "N° 00-446-30045-04",
-    "fdurancontreras4@gmail.com"
+    "Martín Alonso Vega Avalos",
+    "RUT: 19.690.004-7",
+    "Global66",
+    "Cuenta Vista",
+    "N° 13066564"
   ].join("\n");
   navigator.clipboard?.writeText(txt).then(()=>{
     copyBtn.textContent = "¡Datos copiados!";
