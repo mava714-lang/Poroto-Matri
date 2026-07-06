@@ -3,10 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comparte tus fotos · Fer &amp; Martín</title>
+<title>Gracias · Fer & Martín</title>
+<meta name="description" content="Gracias por acompañarnos. Sube tus fotos y videos de la fiesta 📸">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Comparte tus fotos · Fer &amp; Martín">
-<meta property="og:description" content="Muy pronto podrás compartir tus fotos y videos del matrimonio 📸">
+<meta property="og:url" content="https://poroto-matri.vercel.app/fotos">
+<meta property="og:title" content="Gracias · Fer & Martín">
+<meta property="og:description" content="Gracias por acompañarnos. Sube tus fotos y videos de la fiesta 📸">
+<meta property="og:image" content="https://poroto-matri.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gracias · Fer & Martín">
+<meta name="twitter:description" content="Gracias por acompañarnos. Sube tus fotos y videos de la fiesta 📸">
+<meta name="twitter:image" content="https://poroto-matri.vercel.app/og.png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -33,63 +43,100 @@
   .card::after{content:''; position:absolute; inset:14px; border:1px solid rgba(176,149,78,.4); pointer-events:none;}
   .reveal{opacity:0; transform:translateY(12px); animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;}
   @keyframes rise{to{opacity:1;transform:none;}}
+
   .overline{font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--blue); font-weight:500; margin-bottom:8px;}
-  .who{font-family:'DM Serif Display',serif; font-size:30px; letter-spacing:-.5px;}
+  .who{font-family:'DM Serif Display',serif; font-size:32px; letter-spacing:-.5px;}
   .who .amp{font-style:italic; color:var(--blue);}
+  .rule{width:44px; height:1px; background:rgba(176,149,78,.6); margin:22px auto 0;}
 
-  .pill{display:inline-flex; align-items:center; gap:7px; margin:26px 0 4px; font-size:11px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); background:rgba(176,149,78,.12); border:1px solid rgba(176,149,78,.4); padding:6px 14px; border-radius:30px;}
-  .ico{font-size:34px; margin:18px 0 8px;}
-  .title{font-family:'DM Serif Display',serif; font-size:27px; margin-bottom:10px;}
-  .msg{font-size:13.5px; color:var(--ink2); line-height:1.75; max-width:400px; margin:0 auto;}
-  .dots{margin:22px auto 4px; display:flex; gap:7px; justify-content:center;}
-  .dots span{width:7px; height:7px; border-radius:50%; background:var(--blue); opacity:.25; animation:blink 1.4s infinite;}
-  .dots span:nth-child(2){animation-delay:.2s;} .dots span:nth-child(3){animation-delay:.4s;}
-  @keyframes blink{0%,100%{opacity:.25;} 50%{opacity:.9;}}
+  .thanks{font-size:14.5px; color:var(--ink2); line-height:1.85; max-width:420px; margin:22px auto 0; text-align:center;}
+  .thanks strong{color:var(--ink); font-weight:500;}
 
-  .frame{position:relative; z-index:1; width:100%; max-width:680px; margin-top:18px; background:var(--paper); border:1px solid var(--line); box-shadow:0 30px 70px -30px rgba(35,49,79,.3); overflow:hidden;}
-  .frame iframe{width:100%; min-height:1100px; border:0; display:block; background:#fff;}
+  .diamond{color:var(--gold); font-size:15px; margin:26px 0 4px;}
 
-  .back{display:block; text-align:center; margin-top:26px; font-size:12px; color:var(--ink2); text-decoration:none;}
+  /* Elemento principal: subir fotos y videos */
+  .upload{margin-top:22px; padding:30px 22px 26px; background:var(--blue-soft); border:1px solid rgba(31,70,144,.18);}
+  .upload .uico{font-size:38px; margin-bottom:10px;}
+  .upload .utitle{font-family:'DM Serif Display',serif; font-size:25px; color:var(--ink); margin-bottom:10px;}
+  .upload .usub{font-size:13.5px; color:var(--ink2); line-height:1.7; max-width:380px; margin:0 auto 20px;}
+  .ubtn{display:inline-block; width:100%; max-width:320px; padding:16px 20px; background:var(--blue); color:#fff; text-decoration:none; font-size:14px; font-weight:500; letter-spacing:.02em; transition:background .2s, transform .1s;}
+  .ubtn:hover{background:#173873;}
+  .ubtn:active{transform:translateY(1px);}
+  .ubtn.disabled{opacity:.55; pointer-events:none; cursor:default; background:var(--ink3);}
+  .unote{font-size:11.5px; color:var(--ink3); margin-top:12px; line-height:1.5;}
+
+  /* Cuadro de regalos */
+  .giftbox{display:block; text-decoration:none; margin-top:24px; padding:22px 20px; background:rgba(176,149,78,.07); border:1px solid rgba(176,149,78,.4); text-align:center; transition:background .2s, transform .1s;}
+  .giftbox:hover{background:rgba(176,149,78,.14);}
+  .giftbox:active{transform:translateY(1px);}
+  .giftbox .gico{display:block; font-size:26px; margin-bottom:7px;}
+  .giftbox .gtitle{display:block; font-family:'DM Serif Display',serif; font-size:19px; color:var(--ink); margin-bottom:7px;}
+  .giftbox .gsub{display:block; font-size:12.5px; color:var(--ink2); line-height:1.6; max-width:340px; margin:0 auto 12px;}
+  .giftbox .gcta{display:inline-block; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--blue); font-weight:500; border-bottom:1px solid var(--blue); padding-bottom:3px;}
+
+  .footer{margin-top:28px; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--ink3);}
+  .back{display:block; text-align:center; margin-top:22px; font-size:12px; color:var(--ink2); text-decoration:none;}
   .back span{border-bottom:1px solid var(--line); padding-bottom:2px;}
   .back:hover span{color:var(--blue);}
 </style>
 </head>
 <body>
 
-<div style="width:100%; max-width:680px;">
+<div style="width:100%; max-width:540px;">
+  <div class="card reveal">
+    <div class="overline">Gracias por acompañarnos</div>
+    <div class="who">Fer <span class="amp">&</span> Martín</div>
+    <div class="rule"></div>
 
-  <!-- Estado: EN CONSTRUCCIÓN (visible por defecto) -->
-  <div class="card reveal" id="soon">
-    <div class="overline">Galería compartida</div>
-    <div class="who">Fer <span class="amp">&amp;</span> Martín</div>
-    <div class="pill">&#128679; En construcción</div>
-    <div class="ico">&#128247;</div>
-    <div class="title">Muy pronto</div>
-    <p class="msg">Estamos preparando este espacio para que compartas tus fotos y videos del matrimonio. ¡Estará disponible muy pronto!</p>
-    <div class="dots"><span></span><span></span><span></span></div>
+    <p class="thanks">
+      Todavía no lo podemos creer. <strong>Gracias por acompañarnos en uno de los días más felices de nuestras vidas.</strong>
+      Que estuvieras ahí, celebrando con nosotros, lo hizo todo más especial. La pasamos increíble, bailamos hasta tarde
+      y nos reímos como nunca, y gran parte de esa magia fue por ustedes. <strong>Los queremos muchísimo.</strong>
+      Ahora queremos revivir cada momento, así que ayúdanos a juntar todas las fotos y videos de esa noche.
+    </p>
+
+    <div class="diamond">&#9670;</div>
+
+    <!-- Elemento principal -->
+    <div class="upload">
+      <div class="uico">&#128247;</div>
+      <div class="utitle">Sube tus fotos y videos</div>
+      <p class="usub">Todo lo que hayas capturado esa noche va a un álbum compartido. Súbelo directo desde tu celular, en segundos.</p>
+      <a class="ubtn" id="uploadBtn" href="#" target="_blank" rel="noopener">Subir mis fotos y videos</a>
+      <p class="unote">Se abre el álbum compartido en una pestaña nueva. Puedes subir tantas como quieras.</p>
+    </div>
+
+    <!-- Cuadro de regalos -->
+    <a class="giftbox" href="https://poroto-matri.vercel.app/regalo">
+      <span class="gico">&#127873;</span>
+      <span class="gtitle">Lista de regalos</span>
+      <span class="gsub">¿Aún no alcanzaste a hacernos un regalo? No hay apuro, aquí dejamos la lista por si quieres.</span>
+      <span class="gcta">Ver lista &rarr;</span>
+    </a>
+
+    <div class="footer">04 &middot; 07 &middot; 2026</div>
   </div>
 
-  <!-- Estado: FORMULARIO ACTIVO (oculto hasta configurar FORM_EMBED_URL) -->
-  <div class="frame reveal" id="frameWrap" style="display:none;">
-    <iframe id="formFrame" src="" loading="lazy" title="Subir fotos y videos">Cargando…</iframe>
-  </div>
-
-  <a class="back reveal" href="index.html" style="animation-delay:.12s;"><span>&larr; Volver a la invitación</span></a>
+  <a class="back reveal" href="https://poroto-matri.vercel.app/" style="animation-delay:.12s;"><span>&larr; Volver a la invitación</span></a>
 </div>
 
 <script>
-/* Para ACTIVAR la galería cuando esté lista:
-   pega aquí la URL de inserción del Google Form (termina en /viewform?embedded=true). */
-const FORM_EMBED_URL = "PEGA_AQUI_LA_URL_DEL_FORMULARIO";
+/* Para ACTIVAR la subida de fotos:
+   pega aquí el link del álbum compartido de Google Photos.
+   Mientras quede el texto de ejemplo, el botón muestra "muy pronto". */
+const ALBUM_URL = "https://photos.app.goo.gl/QbgRKfVKrtSRdm1V7";
 
-const ready = FORM_EMBED_URL && !FORM_EMBED_URL.includes("PEGA_AQUI");
-if (ready){
-  const url = FORM_EMBED_URL.includes("embedded=true") ? FORM_EMBED_URL
-            : FORM_EMBED_URL + (FORM_EMBED_URL.includes("?") ? "&" : "?") + "embedded=true";
-  document.getElementById("formFrame").src = url;
-  document.getElementById("soon").style.display = "none";
-  document.getElementById("frameWrap").style.display = "block";
-}
+(function(){
+  var btn = document.getElementById("uploadBtn");
+  var ready = ALBUM_URL && ALBUM_URL.indexOf("PEGA_AQUI") === -1;
+  if(ready){
+    btn.href = ALBUM_URL;
+  } else {
+    btn.removeAttribute("href");
+    btn.classList.add("disabled");
+    btn.textContent = "Habilitamos la subida muy pronto";
+  }
+})();
 </script>
 </body>
 </html>
